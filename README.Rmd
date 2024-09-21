@@ -35,31 +35,43 @@ You can install the development version of yemmaps like so:
 
 This is a basic example which shows you how to solve a common problem:
 
-```{r}
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  fig.width = 7,
+  fig.asp = 0.8,
+  out.width = "100%"
+)
+```
+
+```{r adm0_example}
 library(yemmaps)
 library(ggplot2)
 library(hrbrthemes)
 
-theme_set(theme_ft_rc())
+theme_set(theme_ipsum())
 
 ggplot(yemmap_adm0) +
   geom_sf() +
   labs(title = "Administrative map of Yemen")
 ```
 
-```{r}
+```{r adm1_example, dpi = 600}
 library(yemmaps)
 library(ggplot2)
 library(hrbrthemes)
 library(ggrepel)
 
-theme_set(theme_ft_rc())
+theme_set(theme_ipsum())
 
 ggplot(yemmap_adm1) +
   geom_sf(fill = "white") +
   ggrepel::geom_label_repel(
     aes(label = ADM1_EN, geometry = geometry),
-    stat = "sf_coordinates"
+    stat = "sf_coordinates",
+    size = 8 / .pt
   ) +
-  labs(title = "Administrative map of Yemen", subtitle = "at the level of governorate")
+  labs(
+    title = "Administrative map of Yemen",
+    subtitle = "at the level of governorate"
+  )
 ```

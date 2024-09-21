@@ -31,14 +31,14 @@ library(yemmaps)
 library(ggplot2)
 library(hrbrthemes)
 
-theme_set(theme_ft_rc())
+theme_set(theme_ipsum())
 
 ggplot(yemmap_adm0) +
   geom_sf() +
   labs(title = "Administrative map of Yemen")
 ```
 
-<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
+<img src="man/figures/README-adm0_example-1.png" width="100%" />
 
 ``` r
 library(yemmaps)
@@ -46,19 +46,21 @@ library(ggplot2)
 library(hrbrthemes)
 library(ggrepel)
 
-theme_set(theme_ft_rc())
+theme_set(theme_ipsum())
 
 ggplot(yemmap_adm1) +
   geom_sf(fill = "white") +
   ggrepel::geom_label_repel(
     aes(label = ADM1_EN, geometry = geometry),
-    stat = "sf_coordinates"
+    stat = "sf_coordinates",
+    size = 8 / .pt
   ) +
-  labs(title = "Administrative map of Yemen", subtitle = "at the level of governorate")
+  labs(
+    title = "Administrative map of Yemen",
+    subtitle = "at the level of governorate"
+  )
 #> Warning in st_point_on_surface.sfc(sf::st_zm(x)): st_point_on_surface may not
 #> give correct results for longitude/latitude data
-#> Warning: ggrepel: 2 unlabeled data points (too many overlaps). Consider
-#> increasing max.overlaps
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+<img src="man/figures/README-adm1_example-1.png" width="100%" />
