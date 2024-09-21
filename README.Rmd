@@ -2,8 +2,6 @@
 output: github_document
 ---
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -19,37 +17,49 @@ knitr::opts_chunk$set(
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
-The goal of yemmaps is to ...
+yemmaps is an R package for accessing and working with geographic boundary data for Yemen.
+It provides easy-to-use functions to retrieve boundaries at different administrative levels—country,
+regions, provinces, and districts—and integrates smoothly with tools like ggplot2,
+leaflet, and sf for visualization. You can also join your own data,
+like population or economic info, to these boundaries for mapping and analysis.
 
 ## Installation
 
 You can install the development version of yemmaps like so:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+
 ```
 
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
 
-```{r example}
+```{r}
 library(yemmaps)
-## basic example code
+library(ggplot2)
+library(hrbrthemes)
+
+theme_set(theme_ft_rc())
+
+ggplot(yemmap_adm0) +
+  geom_sf() +
+  labs(title = "Administrative map of Yemen")
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+```{r}
+library(yemmaps)
+library(ggplot2)
+library(hrbrthemes)
+library(ggrepel)
 
-```{r cars}
-summary(cars)
+theme_set(theme_ft_rc())
+
+ggplot(yemmap_adm1) +
+  geom_sf(fill = "white") +
+  ggrepel::geom_label_repel(
+    aes(label = ADM1_EN, geometry = geometry),
+    stat = "sf_coordinates"
+  ) +
+  labs(title = "Administrative map of Yemen", subtitle = "at the level of governorate")
 ```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
