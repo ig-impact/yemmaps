@@ -1,8 +1,8 @@
-^renv$
-^renv\.lock$
+^LICENSE\.md$
+^README\.Rmd$
 ^_pkgdown\.yml$
+^data-raw$
 ^docs$
 ^pkgdown$
-^README\.Rmd$
-^LICENSE\.md$
-^data-raw$
+^renv$
+^renv\.lock$

@@ -158,3 +158,20 @@
 #'
 #' @keywords datasets, geo, sf, boundaries, Yemen
 "yemmap_adm3"
+
+
+#' World Basemap
+#'
+#'
+#' @format A simple features ('sf') object
+#'
+#' @keywords datasets, geo, sf
+"world"
+
+#' World Basemap cropped to Yemen
+#'
+#'
+#' @format A simple features ('sf') object
+#'
+#' @keywords datasets, geo, sf
+"world_cropped"

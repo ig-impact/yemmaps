@@ -60,3 +60,14 @@ yemmap_adm3 <- sf::st_read(fs::path(
     "geometry"
   )))
 usethis::use_data(yemmap_adm3, overwrite = TRUE)
+
+# World Basemap
+
+world <- sf::st_read("world_basemap.shp") |> sf::st_make_valid()
+usethis::use_data(world, overwrite = TRUE)
+
+world_cropped <- world |>
+  sf::st_crop(sf::st_bbox(yemmap_adm0)) |>
+  sf::st_make_valid()
+
+usethis::use_data(world_cropped, overwrite = TRUE)

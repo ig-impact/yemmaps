@@ -8,16 +8,20 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 Imports: 
     ggplot2,
+    ggspatial,
     hrbrthemes,
     lifecycle,
-    sf
+    rlang,
+    sf,
+    ggrepel,
+    showtext,
+    sysfonts
 Suggests: 
     fs,
     archive,
     httr2,
     leaflet,
-    readxl,
-    ggrepel
+    readxl
 Depends: 
     R (>= 2.10)
 LazyData: true
