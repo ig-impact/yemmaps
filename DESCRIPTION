@@ -21,7 +21,8 @@ Suggests:
     archive,
     httr2,
     leaflet,
-    readxl
+    readxl,
+    preferably
 Depends: 
     R (>= 2.10)
 LazyData: true
