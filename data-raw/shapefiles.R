@@ -22,13 +22,16 @@ archive::archive_extract(shp_tmp_zip, dir = shp_tmp_dir)
 yem_adm0 <- sf::st_read(
   fs::path(shp_tmp_dir, "yem_admbnda_adm0_govyem_cso_20191002.shp")
 ) |>
-  dplyr::select(
-    dplyr::all_of(c(
-      "ADM0_PCODE",
-      "ADM0_EN", "ADM0_AR",
+  collapse::gv(
+    c(
+      "yem_pcode_adm0" = "ADM0_PCODE",
+      "yem_adm0_en" = "ADM0_EN",
+      "yem_adm0_ar" = "ADM0_AR",
       "geometry"
-    ))
+    ),
+    rename = TRUE
   )
+
 usethis::use_data(yem_adm0, overwrite = TRUE)
 
 # Loading ADM1
@@ -36,11 +39,16 @@ yem_adm1 <- sf::st_read(fs::path(
   shp_tmp_dir,
   "yem_admbnda_adm1_govyem_cso_20191002.shp"
 )) |>
-  dplyr::select(dplyr::all_of(c(
-    "ADM0_PCODE", "ADM1_PCODE",
-    "ADM1_EN", "ADM1_AR",
-    "geometry"
-  )))
+  collapse::gv(
+    c(
+      "yem_pcode_adm0" = "ADM0_PCODE",
+      "yem_pcode_adm1" = "ADM1_PCODE",
+      "yem_adm1_en" = "ADM1_EN",
+      "yem_adm1_ar" = "ADM1_AR",
+      "geometry"
+    ),
+    rename = TRUE
+  )
 usethis::use_data(yem_adm1, overwrite = TRUE)
 
 # Loading ADM2
@@ -48,11 +56,17 @@ yem_adm2 <- sf::st_read(fs::path(
   shp_tmp_dir,
   "yem_admbnda_adm2_govyem_cso_20191002.shp"
 )) |>
-  dplyr::select(dplyr::all_of(c(
-    "ADM0_PCODE", "ADM1_PCODE", "ADM2_PCODE",
-    "ADM2_EN", "ADM2_AR",
-    "geometry"
-  )))
+  collapse::gv(
+    c(
+      "yem_pcode_adm0" = "ADM0_PCODE",
+      "yem_pcode_adm1" = "ADM1_PCODE",
+      "yem_pcode_adm2" = "ADM2_PCODE",
+      "yem_adm2_en" = "ADM2_EN",
+      "yem_adm2_ar" = "ADM2_AR",
+      "geometry"
+    ),
+    rename = TRUE
+  )
 usethis::use_data(yem_adm2, overwrite = TRUE)
 
 # Loading ADM3
@@ -60,11 +74,18 @@ yem_adm3 <- sf::st_read(fs::path(
   shp_tmp_dir,
   "yem_admbnda_adm3_govyem_cso_20191002.shp"
 )) |>
-  dplyr::select(dplyr::all_of(c(
-    "ADM0_PCODE", "ADM1_PCODE", "ADM2_PCODE", "ADM3_PCODE",
-    "ADM3_EN", "ADM3_AR",
-    "geometry"
-  )))
+  collapse::gv(
+    c(
+      "yem_pcode_adm0" = "ADM0_PCODE",
+      "yem_pcode_adm1" = "ADM1_PCODE",
+      "yem_pcode_adm2" = "ADM2_PCODE",
+      "yem_pcode_adm3" = "ADM3_PCODE",
+      "yem_adm3_en" = "ADM3_EN",
+      "yem_adm3_ar" = "ADM3_AR",
+      "geometry"
+    ),
+    rename = TRUE
+  )
 usethis::use_data(yem_adm3, overwrite = TRUE)
 
 # World Basemap

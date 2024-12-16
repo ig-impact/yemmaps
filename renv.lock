@@ -341,6 +341,17 @@
       ],
       "Hash": "61e097f35917d342622f21cdc79c256e"
     },
+    "collapse": {
+      "Package": "collapse",
+      "Version": "2.0.18",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Requirements": [
+        "R",
+        "Rcpp"
+      ],
+      "Hash": "1c8dff92ef021ec9e59930041f967758"
+    },
     "colorspace": {
       "Package": "colorspace",
       "Version": "2.1-1",
