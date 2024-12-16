@@ -1,8 +1,14 @@
-requireNamespace("httr2")
-requireNamespace("archive")
-requireNamespace("fs")
+stopifnot(
+  requireNamespace("httr2"),
+  requireNamespace("archive"),
+  requireNamespace("fs")
+)
 
-shp_url <- "https://data.humdata.org/dataset/6b2656e2-b915-4671-bfed-468d5edcd80a/resource/31161a5e-2111-4967-9f1e-4fceeb38a3a1/download/yem-administrative-divisions-shapefiles.zip"
+shp_url <- paste0(
+  "https://data.humdata.org/dataset/6b2656e2-b915-4671-bfed-468d5edcd80a",
+  "/resource/31161a5e-2111-4967-9f1e-4fceeb38a3a1/download",
+  "/yem-administrative-divisions-shapefiles.zip"
+)
 
 shp_tmp_dir <- tempdir()
 shp_tmp_zip <- tempfile(fileext = ".zip", tmpdir = shp_tmp_dir)
@@ -62,8 +68,12 @@ yem_adm3 <- sf::st_read(fs::path(
 usethis::use_data(yem_adm3, overwrite = TRUE)
 
 # World Basemap
-world <- sf::st_read("world_basemap.shp") |> sf::st_make_valid()
+world <- sf::st_read(
+  system.file("extdata/world_basemap/world_basemap.shp", package = "yemmaps")
+) |> sf::st_make_valid()
 usethis::use_data(world, overwrite = TRUE)
+
+sf::sf_use_s2(FALSE)
 
 world_cropped <- world |>
   sf::st_crop(sf::st_bbox(yem_adm0)) |>
