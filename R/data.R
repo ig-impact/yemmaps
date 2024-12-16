@@ -30,7 +30,7 @@
 #' }
 #'
 #' @keywords datasets, geo, sf, boundaries, Yemen
-"yemmap_adm0"
+"yem_adm0"
 
 #' Yemen Administrative Boundaries Dataset
 #' (Admin Level 1 - Governorate / Mohafada)
@@ -70,7 +70,7 @@
 #' }
 #'
 #' @keywords datasets, geo, sf, boundaries, Yemen
-"yemmap_adm1"
+"yem_adm1"
 
 #' Yemen Administrative Boundaries Dataset (Admin Level 2 -
 #' District / Modeeriyyah)
@@ -112,7 +112,7 @@
 #' }
 #'
 #' @keywords datasets, geo, sf, boundaries, Yemen
-"yemmap_adm2"
+"yem_adm2"
 
 #' Yemen Administrative Boundaries Dataset (Admin Level 3 -
 #' Sub-district / Ozlah)
@@ -157,7 +157,7 @@
 #' }
 #'
 #' @keywords datasets, geo, sf, boundaries, Yemen
-"yemmap_adm3"
+"yem_adm3"
 
 
 #' World Basemap
