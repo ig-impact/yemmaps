@@ -147,7 +147,6 @@
 #'                     first-level division (governorate).}
 #'   \item{ADM2_PCODE}{Character: Administrative code for each
 #'                     second-level division (district).}
-
 #'   \item{ADM3_PCODE}{Character: Administrative code for each
 #'                     third-level division (sub-district).}
 #'   \item{ADM3_EN}{Character: Name of the administrative division in English.}
@@ -158,7 +157,6 @@
 #'
 #' @keywords datasets, geo, sf, boundaries, Yemen
 "yem_adm3"
-
 
 #' World Basemap
 #'
@@ -193,8 +191,8 @@
 #'   per the Central Statistics Organization (CSO). Example: \code{157293.0}.}
 #'   \item{\code{yem_population_estimate}}{Numeric. Updated population estimate
 #'   based on adjusted methodologies. Example: \code{163690.7914}.}
-#'   \item{\code{yem_idps}}{Character. Number of internally displaced persons
-#'   (IDPs) in the corresponding administrative unit. Example: \code{"12552"}.}
+#'   \item{\code{yem_idps}}{Numeric Number of internally displaced persons
+#'   (IDPs) in the corresponding administrative unit. Example: \code{12552}.}
 #' }
 #'
 #' @source Population Taskforce (CSO, UNFPA, IOM, and OCHA)
@@ -216,6 +214,6 @@
 #'
 #' @examples
 #' data(yem_population)
-#' gt::gt((yem_population))
+#' gt::gt(head(yem_population))
 #'
 "yem_population"

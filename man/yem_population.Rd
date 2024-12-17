@@ -15,8 +15,8 @@ for Yemen. Example: \code{"YE1101"}.}
 per the Central Statistics Organization (CSO). Example: \code{157293.0}.}
 \item{\code{yem_population_estimate}}{Numeric. Updated population estimate
 based on adjusted methodologies. Example: \code{163690.7914}.}
-\item{\code{yem_idps}}{Character. Number of internally displaced persons
-(IDPs) in the corresponding administrative unit. Example: \code{"12552"}.}
+\item{\code{yem_idps}}{Numeric Number of internally displaced persons
+(IDPs) in the corresponding administrative unit. Example: \code{12552}.}
 }
 }
 \source{
@@ -49,7 +49,7 @@ real-time population changes.
 }
 \examples{
 data(yem_population)
-gt::gt((yem_population))
+gt::gt(head(yem_population))
 
 }
 \keyword{datasets}
