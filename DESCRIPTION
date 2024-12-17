@@ -20,10 +20,13 @@ Suggests:
     gt,
     httr2,
     janitor,
+    knitr,
     readxl,
+    rmarkdown,
     usethis
 Depends: 
     R (>= 3.5)
 LazyData: true
 Authors@R: 
     person("Iyed", "Ghedamsi", , "contact@iyedg.me", role = c("cre", "aut", "ctb"))
+VignetteBuilder: knitr

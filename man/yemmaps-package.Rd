@@ -6,7 +6,7 @@
 \alias{yemmaps-package}
 \title{yemmaps: Access P-codes and Visualize Geographic Boundaries for Yemen}
 \description{
-This package provides access to geographic boundary data for Yemen, including its administrative regions. It offers tools to retrieve, and visualize spatial data at various administrative levels. It is designed to support workflows that involve analyzing geographic or regional data for Yemen.
+This package provides access to geographic boundary data for Yemen, including its administrative regions. It offers tools to retrieve, and visualize spatial data at various administrative levels. It is designed to support workflows that involve analyzing geographic data for Yemen.
 }
 \author{
 \strong{Maintainer}: Iyed Ghedamsi \email{contact@iyedg.me} [contributor]
