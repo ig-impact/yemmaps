@@ -28,7 +28,6 @@ like population or economic info, to these boundaries for mapping and analysis.
 You can install the development version of yemmaps like so:
 
 ``` r
-
 ```
 
 ## Example
@@ -42,14 +41,4 @@ knitr::opts_chunk$set(
   fig.dpi = 300,
   out.width = "100%"
 )
-```
-
-```{r adm0_example, fig.width}
-library(yemmaps)
-yem_plot_adm0()
-```
-
-```{r adm1_example, fig.width=9, fig.asp = 0.5625}
-library(yemmaps)
-yem_plot_adm1()
 ```

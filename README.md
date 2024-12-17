@@ -25,19 +25,3 @@ You can install the development version of yemmaps like so:
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
-
-``` r
-library(yemmaps)
-yem_plot_adm0()
-```
-
-<img src="man/figures/README-adm0_example, fig.width-1.png" width="100%" />
-
-``` r
-library(yemmaps)
-yem_plot_adm1()
-#> Warning in st_point_on_surface.sfc(sf::st_zm(x)): st_point_on_surface may not
-#> give correct results for longitude/latitude data
-```
-
-<img src="man/figures/README-adm1_example-1.png" width="100%" />
