@@ -1,8 +1,6 @@
-stopifnot(
-  requireNamespace("readxl", quietly = TRUE),
-  requireNamespace("httr2", quietly = TRUE),
-  requireNamespace("janitor", quietly = TRUE)
-)
+rlang::check_installed("janitor")
+rlang::check_installed("readxl")
+rlang::check_installed("usethis")
 
 url <- paste0(
   "https://data.humdata.org/dataset/1ffe81f1-b980-430f-b53e-dd79e936f291/",
@@ -21,7 +19,8 @@ raw_yem_population <- readxl::read_excel(tmp_file,
   skip = 1,
   .name_repair = "minimal"
 ) |>
-  janitor::clean_names(replace = c("\\+" = "_plus"))
+  janitor::clean_names(replace = c("\\+" = "_plus")) |>
+  janitor::remove_empty("rows")
 
 
 yem_population <- raw_yem_population |>

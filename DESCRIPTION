@@ -1,7 +1,7 @@
 Package: yemmaps
 Title: Access P-codes and Visualize Geographic Boundaries for Yemen
 Version: 0.0.0.9000
-Description: This package provides access to geographic boundary data for Yemen, including its administrative regions. It offers tools to retrieve, and visualize spatial data at various administrative levels. It is designed to support workflows that involve analyzing geographic or regional data for Yemen.
+Description: This package provides access to geographic boundary data for Yemen, including its administrative regions. It offers tools to retrieve, and visualize spatial data at various administrative levels. It is designed to support workflows that involve analyzing geographic data for Yemen.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -15,17 +15,15 @@ Imports:
     sf,
     ggrepel,
     showtext,
-    sysfonts
+    collapse
 Suggests: 
-    fs,
-    archive,
+    gt,
     httr2,
-    leaflet,
+    janitor,
     readxl,
-    preferably
+    usethis
 Depends: 
     R (>= 3.5)
 LazyData: true
-LazyDataCompression: true
 Authors@R: 
     person("Iyed", "Ghedamsi", , "contact@iyedg.me", role = c("cre", "aut", "ctb"))
