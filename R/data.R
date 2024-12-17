@@ -175,3 +175,47 @@
 #'
 #' @keywords datasets, geo, sf
 "world_cropped"
+
+#' Yemen Population and IDP Estimates Dataset
+#'
+#' This dataset provides population estimates and internally displaced persons
+#' (IDPs) data at the governorate (ADM1) and district (ADM2) levels in Yemen.
+#' The dataset is intended as a baseline for humanitarian planning,
+#' particularly for the United Nations' 2023 humanitarian program cycle.
+#'
+#' @format A data frame with 339 rows and 5 variables:
+#' \describe{
+#'   \item{\code{yem_adm1_pcode}}{Character. Administrative 1 (Governorate)
+#'   P-Code for Yemen. Example: \code{"YE11"}.}
+#'   \item{\code{yem_adm2_pcode}}{Character. Administrative 2 (District) P-Code
+#'   for Yemen. Example: \code{"YE1101"}.}
+#'   \item{\code{yem_population_cso_estimate}}{Numeric. Population estimate as
+#'   per the Central Statistics Organization (CSO). Example: \code{157293.0}.}
+#'   \item{\code{yem_population_estimate}}{Numeric. Updated population estimate
+#'   based on adjusted methodologies. Example: \code{163690.7914}.}
+#'   \item{\code{yem_idps}}{Character. Number of internally displaced persons
+#'   (IDPs) in the corresponding administrative unit. Example: \code{"12552"}.}
+#' }
+#'
+#' @source Population Taskforce (CSO, UNFPA, IOM, and OCHA)
+#'
+#' @details
+#' - \strong{Contributor:} OCHA Yemen
+#' - \strong{Time Period:} November 15, 2018 - December 31, 2024
+#' - \strong{Last Modified:} August 16, 2024
+#' - \strong{Dataset Added on HDX:} July 16, 2020
+#' - \strong{Expected Update Frequency:} Annually
+#' - \strong{Location:} Yemen
+#' - \strong{License:} Creative Commons Attribution International (CC-BY)
+#'
+#' @note These population estimates are for the United Nations' 2023
+#' humanitarian program cycle planning purposes only and may not reflect
+#' real-time population changes.
+#'
+#' @keywords datasets population idps humanitarian
+#'
+#' @examples
+#' data(yem_population)
+#' gt::gt((yem_population))
+#'
+"yem_population"
