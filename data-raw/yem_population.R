@@ -26,11 +26,19 @@ raw_yem_population <- readxl::read_excel(tmp_file,
 yem_population <- raw_yem_population |>
   collapse::fsubset(2:nrow(raw_yem_population)) |>
   collapse::gv(c(
-    "yem_adm1_pcode" = "governorate_pcode",
-    "yem_adm2_pcode" = "districte_pcode",
+    "yem_pcode_adm1" = "governorate_pcode",
+    "yem_pcode_adm2" = "districte_pcode",
     "yem_population_cso_estimate" = "cso_estimated_population_2024",
     "yem_population_estimate" = "current_estimated_population",
     "yem_idps" = "total_id_ps_in_district"
-  ), rename = TRUE)
+  ), rename = TRUE) |>
+  collapse::ftransformv(
+    vars = c(
+      "yem_idps",
+      "yem_population_estimate",
+      "yem_population_cso_estimate"
+    ),
+    FUN = as.numeric
+  )
 
 usethis::use_data(yem_population, overwrite = TRUE)

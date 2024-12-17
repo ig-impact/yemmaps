@@ -7,9 +7,9 @@
 \format{
 A data frame with 339 rows and 5 variables:
 \describe{
-\item{\code{yem_adm1_pcode}}{Character. Administrative 1 (Governorate)
+\item{\code{yem_pcode_adm1}}{Character. Administrative 1 (Governorate)
 P-Code for Yemen. Example: \code{"YE11"}.}
-\item{\code{yem_adm2_pcode}}{Character. Administrative 2 (District) P-Code
+\item{\code{yem_pcode_adm2}}{Character. Administrative 2 (District) P-Code
 for Yemen. Example: \code{"YE1101"}.}
 \item{\code{yem_population_cso_estimate}}{Numeric. Population estimate as
 per the Central Statistics Organization (CSO). Example: \code{157293.0}.}
