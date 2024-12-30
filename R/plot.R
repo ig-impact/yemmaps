@@ -8,6 +8,7 @@ yem_colors <- c()
 #' @export
 yem_theme <- function(...) {
   main_font_family <- "Roboto Condensed"
+  hrbrthemes::update_geom_font_defaults(family = main_font_family)
   theme_ipsum(...) + # nolint object_usage_linter
     theme( # nolint object_usage_linter
       plot.title = element_text(family = main_font_family), # nolint object_usage_linter
